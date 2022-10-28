@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sav.news.databinding.ItemNewsBinding
 import com.sav.news.models.News
-import com.sav.news.utils.extensions.loadImage
 
 class NewsPagingAdapter(val onClick: (news: News) -> Unit) :
     PagingDataAdapter<News, NewsPagingAdapter.NewsViewHolder>(object :
@@ -34,7 +33,6 @@ class NewsPagingAdapter(val onClick: (news: News) -> Unit) :
 
         fun bind(news: News) {
             binding.data = news
-            binding.imvPhoto.loadImage(news.imageUrl)
             binding.llPost.setOnClickListener {
                 onClick(news)
             }

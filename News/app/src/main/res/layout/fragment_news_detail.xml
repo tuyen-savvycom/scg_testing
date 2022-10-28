@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@null"
+                app:imageUrl="@{data.imageUrl}"
                 android:src="@color/black" />
 
             <TextView

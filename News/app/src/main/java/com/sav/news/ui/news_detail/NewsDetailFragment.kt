@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.sav.news.base.BaseFragment
 import com.sav.news.databinding.FragmentNewsDetailBinding
-import com.sav.news.utils.extensions.loadImage
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,8 +27,6 @@ class NewsDetailFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.imvPhoto.loadImage(args.newsDetail.imageUrl)
 
         binding.btnBack.setOnClickListener {
             navController.popBackStack()
