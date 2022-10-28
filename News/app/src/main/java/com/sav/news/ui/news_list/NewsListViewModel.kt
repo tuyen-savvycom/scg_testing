@@ -20,7 +20,7 @@ class NewsListViewModel @Inject constructor(
 
     fun getLstNews(keyWord: CharSequence) {
         viewModelScope.launch {
-            newsUserCase(this, "us", keyWord.toString()).collect {
+            newsUserCase("us", keyWord.toString()).flow.collect {
                 _newList.value = it
             }
         }

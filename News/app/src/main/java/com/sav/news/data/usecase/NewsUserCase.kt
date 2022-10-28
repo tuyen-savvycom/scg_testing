@@ -1,10 +1,8 @@
 package com.sav.news.data.usecase
 
-import androidx.paging.PagingData
+import androidx.paging.Pager
 import com.sav.news.data.repository.NewsRepository
 import com.sav.news.models.News
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class NewsUserCase @Inject constructor(
@@ -12,11 +10,10 @@ class NewsUserCase @Inject constructor(
 ) {
 
     operator fun invoke(
-        coroutineScope: CoroutineScope,
         country: String,
         searchKeyword: String,
-    ): Flow<PagingData<News>> {
-        return newsRepository.getNewsList(coroutineScope, country, searchKeyword)
+    ): Pager<Int, News> {
+        return newsRepository.getNewsList(country, searchKeyword)
     }
 
 }
