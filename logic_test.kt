@@ -1,17 +1,21 @@
 fun main() {
-    findMiddleIndex(listOf(0,1,0))
-    print("\n")
-    print("Level".isPalindrome())
+    findMiddleIndex(listOf(1, 3, 5, 7, 9))
+    findMiddleIndex(listOf(3, 6, 8, 1, 5, 10, 1, 7))
+    findMiddleIndex(listOf(3, 5, 6))
+
+    checkPalindrome("aka")
+    checkPalindrome("Level")
+    checkPalindrome("Hello")
 }
 
 fun findMiddleIndex(data: List<Int>) {
     for (index in data.indices) {
         if (data.isMiddle(index)) {
-            print("middle index is $index")
+            print("middle index is $index\n")
             return
         }
     }
-    print("index not found")
+    print("index not found\n")
 }
 
 fun List<Int>.isMiddle(index: Int): Boolean {
@@ -27,6 +31,10 @@ fun List<Int>.sumOfRange(from: Int, to: Int): Int {
         sum += this[index]
     }
     return sum
+}
+
+fun checkPalindrome(input: String) {
+    print(if (input.isPalindrome()) "$input is a palindrome\n" else "$input isn’t a palindrome\n")
 }
 
 fun String.isPalindrome(): Boolean {
